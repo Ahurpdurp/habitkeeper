@@ -1,0 +1,60 @@
+.habits li {
+    list-style-type: none;
+    text-align:center;
+}
+
+
+
+.calendars { /* div for the calendars */
+    display:flex;
+    justify-content: center;
+}
+
+.calendar {
+    text-align:center;
+    padding-left:2em;
+}
+
+.calendar-month_header {
+    display:flex;
+    justify-content: center;
+    padding-bottom:1.5em;
+}
+
+.calendar-month_header button {
+    display:none;
+}
+
+.calendar-days_of_week {
+    padding-bottom:.8em;
+    display:flex;
+    justify-content: center;
+    font-size:.8em;
+    padding-right:.9em;
+}
+
+.calendar-week {
+    text-align: center;
+    padding-right:.1em;
+}
+
+.calendar-day{
+    border:none;
+    width:3em;
+    transition: .4s;
+}
+
+.calendar-day:hover {
+    transform:scale(1.7)
+}
+
+
+.is-selected {
+    color:red;
+}
+
+.calendar-days_of_week_day{
+
+    padding-left:.4em;
+    padding-right:.5em;
+}

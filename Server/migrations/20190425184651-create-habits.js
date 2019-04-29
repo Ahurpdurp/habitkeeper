@@ -30,6 +30,18 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      completedFl: {
+        type: Sequelize.BOOLEAN
+      },
+      daysCompleted: {
+        type: Sequelize.INTEGER
+      },
+      daysMissed: {
+        type: Sequelize.INTEGER
+      },
+      totalDays: {
+        type: Sequelize.INTEGER
       }
     });
   },

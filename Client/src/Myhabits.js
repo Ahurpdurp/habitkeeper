@@ -21,12 +21,11 @@ export class MyHabits extends Component {
 
     render(){
         let calendarRender = this.state.habits.map(row => {
-        let totalDays = Math.floor((new Date(row.endDate) - new Date(row.startDate))/(1000*60*60*24) + 1)
-        let daysPassed = Math.floor((Date.now() - new Date(row.startDate))/(1000*60*60*24))
-        let dollarsEarnedBack = Math.floor((daysPassed / totalDays) * row.commitment * 100)/100
-
+            let totalDays = Math.floor((new Date(row.endDate) - new Date(row.startDate))/(1000*60*60*24) + 1)
+            let daysPassed = Math.floor((Date.now() - new Date(row.startDate))/(1000*60*60*24))
+            let dollarsEarnedBack = Math.floor((daysPassed / totalDays) * row.commitment * 100)/100
             return (
-                <li>
+                <li key = {row.id}>
                     <h1>{row.habit}</h1>
                     <div className = 'calendars'>
                       <Calendar maxDate = {'2000-01-01'} activeMonth = {new Date(row.startDate)} mode = {'range'} selected = {{start: new Date(row.startDate), end: new Date(row.startDate)}} weekStartsOn = {0} />

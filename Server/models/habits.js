@@ -5,7 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     habit: DataTypes.STRING,
     commitment: DataTypes.FLOAT,
     startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE
+    endDate: DataTypes.DATE,
+    completedFl: DataTypes.BOOLEAN,
+    daysCompleted: DataTypes.INTEGER,
+    daysMissed: DataTypes.INTEGER,
+    totalDays: DataTypes.INTEGER
   }, {});
   habits.associate = function(models) {
     // associations can be defined here

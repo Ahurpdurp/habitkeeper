@@ -39,12 +39,21 @@ schedule.scheduleJob({hour: 23, minute: 59}, function(){ //this function will up
     })
   });
 
-app.get('/', (req,res) =>{
+
+app.get('/', (req,res) => {
+    let resultsSend = []
     models.habits.findAll({
         order:sequelize.col('id')
     })
-    .then(habits =>{
-        res.json(habits)
+    .then(results => {
+        results.forEach(row => {
+        if(row.daysCompleted + row.daysMissed < row.totalDays){
+            resultsSend.push(row)
+        }
+        })
+    })
+    .then(() => {
+        res.json(resultsSend)
     })
 })
 
